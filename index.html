@@ -226,18 +226,31 @@
     
         // Move the character based on arrow key input
         document.addEventListener("keydown", function(event) {
+            var characterWidth = character.offsetWidth;
+            var characterHeight = character.offsetHeight;
+            var windowWidth = window.innerWidth;
+            var windowHeight = window.innerHeight;
+
             switch(event.key) {
                 case "ArrowUp":
-                    posY -= 20; // Move up
+                    if (posY > 0) { // Check top boundary
+                        posY -= 10; // Move up
+                    }
                     break;
                 case "ArrowDown":
-                    posY += 20; // Move down
+                    if (posY + characterHeight < windowHeight) { // Check bottom boundary
+                        posY += 10; // Move down
+                    }
                     break;
                 case "ArrowLeft":
-                    posX -= 20; // Move left
+                    if (posX > 0) { // Check left boundary
+                        posX -= 10; // Move left
+                    }
                     break;
                 case "ArrowRight":
-                    posX += 20; // Move right
+                    if (posX + characterWidth < windowWidth) { // Check right boundary
+                        posX += 10; // Move right
+                    }
                     break;
             }
             // Update character position
