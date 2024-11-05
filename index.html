@@ -234,22 +234,22 @@
             switch(event.key) {
                 case "ArrowUp":
                     if (posY > 0) { // Check top boundary
-                        posY -= 10; // Move up
+                        posY -= 15; // Move up
                     }
                     break;
                 case "ArrowDown":
                     if (posY + characterHeight < windowHeight) { // Check bottom boundary
-                        posY += 10; // Move down
+                        posY += 15; // Move down
                     }
                     break;
                 case "ArrowLeft":
                     if (posX > 0) { // Check left boundary
-                        posX -= 10; // Move left
+                        posX -= 15; // Move left
                     }
                     break;
                 case "ArrowRight":
                     if (posX + characterWidth < windowWidth) { // Check right boundary
-                        posX += 10; // Move right
+                        posX += 15; // Move right
                     }
                     break;
             }
@@ -308,8 +308,94 @@
         }
     
         // Continuously move the green character towards the red character
-        setInterval(chaseRedCharacter, 30); // Adjust chase speed (30ms interval)
+        setInterval(chaseRedCharacter, 9.5); // Adjust chase speed (30ms interval)
     </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+
+  <button id="unpauseButton" style="display:none;">Unpause</button>
+
+  <div id="gameArea">
+    <div id="character"></div>
+  </div>
+
+  <script>
+    // Get elements
+    const pauseButton = document.getElementById('pauseButton');
+    const unpauseButton = document.getElementById('unpauseButton');
+    const character = document.getElementById('character');
+    
+    let gamePaused = false;
+    let positionX = 0;
+    let speed = 2; // Speed of character's movement
+    let animationFrameId;
+
+    // Function to move the character
+    function moveCharacter() {
+      if (!gamePaused) {
+        positionX += speed;
+        if (positionX > window.innerWidth) {
+          positionX = -50; // Reset position when it moves off screen
+        }
+        character.style.left = positionX + 'px';
+        animationFrameId = requestAnimationFrame(moveCharacter);
+      }
+    }
+
+    // Start the animation loop
+    moveCharacter();
+
+    // Pause the game (stop movement)
+    function pauseGame() {
+      gamePaused = true;
+      cancelAnimationFrame(animationFrameId); // Stop the animation
+      pauseButton.style.display = 'none';
+      unpauseButton.style.display = 'inline';
+      console.log('Game Paused');
+    }
+
+    // Unpause the game (resume movement)
+    function unpauseGame() {
+      gamePaused = false;
+      moveCharacter(); // Restart the animation
+      pauseButton.style.display = 'inline';
+      unpauseButton.style.display = 'none';
+      console.log('Game Unpaused');
+    }
+
+    // Event listeners for buttons
+    pauseButton.addEventListener('click', pauseGame);
+    unpauseButton.addEventListener('click', unpauseGame);
+  </script>
+
+</body>
+</html>
+
+
+
+
     
 
 </body>
