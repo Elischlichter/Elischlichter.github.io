@@ -24,7 +24,7 @@
 <script>
     function checkagefunction(){
         let age = document.getElementById("agebox").value;
-        if(age==3||age==4||age==5||age==6||age==7){
+        if(age==1||age==2||age==3||age==4||age==5||age==6||age==7){
             document.getElementById("subwaysurfers").style.display="inline";
             document.getElementById("snake.io").style.display="inline";
             document.getElementById("goingballs").style.display="inline";
@@ -169,7 +169,7 @@
         <a id="battle" href="https://iogamesco.gitlab.io/tags/battle-royale/">battle-royale </a><br>
         <a id="tags" href="https://iogamesco.gitlab.io/tags/battle-royale/">art class </a><br>
     
-
+        <br>
         
         <h2   id="age812">age 8-12</h2>
         <div id="brawlstars">
@@ -187,6 +187,7 @@
              <a id="football" href="https://2minutefootball.gitlab.io/">2 minute football</a><br>
 
         </div>
+        <br>
         
         
         <h2   id="1317">age 13-17</h2>
@@ -324,78 +325,13 @@
 
 
 
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      margin: 10px;
-      cursor: pointer;
-    }
-  </style>
-</head>
+
+
+
+
+
+
+
+    
+
 <body>
-
-
-  <button id="unpauseButton" style="display:none;">Unpause</button>
-
-  <div id="gameArea">
-    <div id="character"></div>
-  </div>
-
-  <script>
-    // Get elements
-    const pauseButton = document.getElementById('pauseButton');
-    const unpauseButton = document.getElementById('unpauseButton');
-    const character = document.getElementById('character');
-    
-    let gamePaused = false;
-    let positionX = 0;
-    let speed = 2; // Speed of character's movement
-    let animationFrameId;
-
-    // Function to move the character
-    function moveCharacter() {
-      if (!gamePaused) {
-        positionX += speed;
-        if (positionX > window.innerWidth) {
-          positionX = -50; // Reset position when it moves off screen
-        }
-        character.style.left = positionX + 'px';
-        animationFrameId = requestAnimationFrame(moveCharacter);
-      }
-    }
-
-    // Start the animation loop
-    moveCharacter();
-
-    // Pause the game (stop movement)
-    function pauseGame() {
-      gamePaused = true;
-      cancelAnimationFrame(animationFrameId); // Stop the animation
-      pauseButton.style.display = 'none';
-      unpauseButton.style.display = 'inline';
-      console.log('Game Paused');
-    }
-
-    // Unpause the game (resume movement)
-    function unpauseGame() {
-      gamePaused = false;
-      moveCharacter(); // Restart the animation
-      pauseButton.style.display = 'inline';
-      unpauseButton.style.display = 'none';
-      console.log('Game Unpaused');
-    }
-
-    // Event listeners for buttons
-    pauseButton.addEventListener('click', pauseGame);
-    unpauseButton.addEventListener('click', unpauseGame);
-  </script>
-
-</body>
-</html>
-
-
-
-
-    
-
-</body>
