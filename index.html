@@ -160,8 +160,8 @@
 </script>
 <body>
     <div class="tab">
-        <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Page1')">Page 1</button>
-        <button class="tablinks" onclick="openTab(event, 'Page2')">Page 2</button>
+        <button class="tablinks"  onclick="openTab(event, 'Page1')">Page 1</button>
+        <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Page2')">Page 2</button>
     </div>
   
     <div id="Page1" class="tab-content">
@@ -236,22 +236,48 @@
         <!-- Red character -->
         <div id="character" style="position: absolute; width: 50px; height: 50px; background-color: red; top: 100px; left: 100px;"></div>
         <!-- Green icon -->
-        <div id="greenIcon" style="position: absolute; width: 50px; height: 50px; background-color: green; top: 200px; left: 200px;"></div>
+        <div id="greenIcon" style="position: absolute; width: 50px; height: 50px; background-color: green; top: 200px; left: 1200px;"></div>
         <div id="timer" style="font-size: 28px;color:blanchedalmond">timer:45</div>
+        <div id="lives" style="font-size: 28px;color:blanchedalmond">lives 3</div>
     </div>
     
     <script>
         // Select the character and green icon elements
         var character = document.getElementById("character");
         var greenIcon = document.getElementById("greenIcon");
+        var timerobject=document.getElementById("timer")
+        var livesobject=document.getElementById("lives")
     
         // Set initial position for the red character
         var posX = 100;
         var posY = 100;
     
         // Set initial position for the green character
-        var greenPosX = 200;
-        var greenPosY = 200;
+        var greenPosX = 1200;
+        var greenPosY = 1200;
+        var timer=45
+        var countdownintervolt;
+        var gameintervolt;
+        var lives=3
+
+        function startTimer(){
+            timerobject.textContent="timer: "+timer;
+            countdownintervolt=setInterval(() => {
+                timer--;
+                timerobject.textContent="timer: "+timer;
+                if(timer==0||timer<0){
+                    timerobject.textContent="GAME OVER"
+                    if(lives>0){
+                        livesobject.textContent="YOU WIN"
+                    }
+                    return
+                }
+    
+                
+
+            }, 1000);
+        }
+
     
         // Move the character based on arrow key input
         document.addEventListener("keydown", function(event) {
@@ -259,6 +285,7 @@
             var characterHeight = character.offsetHeight;
             var windowWidth = window.innerWidth;
             var windowHeight = window.innerHeight;
+            
 
             switch(event.key) {
                 case "ArrowUp":
@@ -289,6 +316,9 @@
     
         // Function to move the green character towards the red character
         function chaseRedCharacter() {
+            if(timer<=0){
+                return
+            }
             // Calculate the difference in position between the green and red characters
             var dx = posX - greenPosX;
             var dy = posY - greenPosY;
@@ -308,6 +338,15 @@
     
             // Check for collision between red and green characters
             if (checkCollision(character, greenIcon)) {
+               
+       
+                lives--;
+                livesobject.textContent="lives: "+lives;
+        
+                if(lives==0||lives<0){
+                    livesobject.textContent="YOU LOST"
+                    return
+                }
                 moveGreenIconRandomly();
             }
         }
@@ -323,6 +362,7 @@
                 redRect.left > greenRect.right ||
                 redRect.right < greenRect.left
             );
+
         }
     
         // Function to move the green icon to a random location
@@ -338,6 +378,7 @@
     
         // Continuously move the green character towards the red character
         setInterval(chaseRedCharacter, 9.5); // Adjust chase speed (30ms interval)
+        startTimer();
     </script>
 <!DOCTYPE html>
 <html lang="en">
