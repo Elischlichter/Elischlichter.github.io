@@ -277,15 +277,17 @@
 
             }, 1000);
         }
+       
 
-    
         // Move the character based on arrow key input
         document.addEventListener("keydown", function(event) {
             var characterWidth = character.offsetWidth;
             var characterHeight = character.offsetHeight;
             var windowWidth = window.innerWidth;
             var windowHeight = window.innerHeight;
-            
+            if(lives<=0||timer<=0){
+                return
+            }
 
             switch(event.key) {
                 case "ArrowUp":
