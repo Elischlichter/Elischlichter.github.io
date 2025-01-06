@@ -156,12 +156,17 @@
     window.onload = function() {
         // Display the first tab by default
         document.getElementById("defaultOpen").click();
+
+
+
+        // Eli do you see how line 169 has id="defaultOpen" on it? And that is the page 2 line? If you want page 1 to be open by default
+        // you need to delete that from line 169 and put it in the exact same spot in 168
     }
 </script>
 <body>
     <div class="tab">
-        <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Page1')">Page 1</button>
-        <button class="tablinks" onclick="openTab(event, 'Page2')">Page 2</button>
+        <button class="tablinks"  onclick="openTab(event, 'Page1')">Page 1</button>
+        <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Page2')">Page 2</button>
     </div>
   
     <div id="Page1" class="tab-content">
@@ -237,13 +242,15 @@
         <div id="character" style="position: absolute; width: 50px; height: 50px; background-color: red; top: 100px; left: 100px;"></div>
         <!-- Green icon -->
         <div id="greenIcon" style="position: absolute; width: 50px; height: 50px; background-color: green; top: 200px; left: 200px;"></div>
-        <div id="timer" style="font-size: 28px;color:blanchedalmond">timer:45</div>
+        <!-- Timer Display -->
+        <div id="timer" style="font-size: 28px;color:blanchedalmond">Timer: 45</div>
     </div>
     
     <script>
         // Select the character and green icon elements
         var character = document.getElementById("character");
         var greenIcon = document.getElementById("greenIcon");
+        var timerDisplay = document.getElementById("timer");
     
         // Set initial position for the red character
         var posX = 100;
@@ -253,13 +260,40 @@
         var greenPosX = 200;
         var greenPosY = 200;
     
+        // Timer variable
+        var timer = 45; // Set the timer to 45 seconds
+        var countdownInterval; // This will store the interval for the countdown timer
+        var gameInterval; // This will store the game loop for chasing the red character
+    
+        // Function to start the timer when "Page 2" is shown
+        function startTimer() {
+            // Display the initial timer value
+            timerDisplay.textContent = "Timer: " + timer;
+    
+            countdownInterval = setInterval(function() {
+                timer--; // Decrease the timer by 1 each second
+                timerDisplay.textContent = "Timer: " + timer; // Update the timer display
+    
+                if (timer <= 0) {
+                    clearInterval(countdownInterval); // Stop the timer when it reaches 0
+                    stopGame(); // Stop the game
+                }
+            }, 1000); // Decrement the timer every second
+        }
+    
+        // Function to stop the game
+        function stopGame() {
+            clearInterval(gameInterval); // Stop the green icon from chasing the red character
+            alert("Game Over! Time's up.");
+        }
+    
         // Move the character based on arrow key input
         document.addEventListener("keydown", function(event) {
             var characterWidth = character.offsetWidth;
             var characterHeight = character.offsetHeight;
             var windowWidth = window.innerWidth;
             var windowHeight = window.innerHeight;
-
+    
             switch(event.key) {
                 case "ArrowUp":
                     if (posY > 0) { // Check top boundary
@@ -336,29 +370,10 @@
             greenIcon.style.left = greenPosX + "px";
         }
     
-        // Continuously move the green character towards the red character
-        setInterval(chaseRedCharacter, 9.5); // Adjust chase speed (30ms interval)
+        // Start the game when "Page 2" is clicked or shown
+        gameInterval = setInterval(chaseRedCharacter, 9.5); // Start the game loop for chasing the red character
+        startTimer(); // Start the timer
+        document.getElementById("Page2").addEventListener("click", function() {
+        });
     </script>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      text-align: center;
-    }
-
-
-
-
-
-
-
-
-
-
     
-
