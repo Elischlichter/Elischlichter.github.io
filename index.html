@@ -235,11 +235,12 @@
     
         
 
-        <h1>Move the Character with Arrow Keys After you win or lose refresh to play again.</h1>
+        <h1>Move the Character with Arrow Keys After you win or lose refresh to play again and to start you have to press k 4 times</h1>
         <!-- Red character -->
         <div id="character" style="position: absolute; width: 50px; height: 50px; background-color: red; top: 100px; left: 100px;"></div>
         <!-- Green icon -->
         <div id="greenIcon" style="position: absolute; width: 50px; height: 50px; background-color: green; top: 200px; left: 1200px;"></div>
+  
         <div id="timer" style="font-size: 28px;color:blanchedalmond">timer:45</div>
         <div id="lives" style="font-size: 28px;color:blanchedalmond">lives 3</div>
     </div>
@@ -256,16 +257,97 @@
         var posY = 100;
     
         // Set initial position for the green character
-        var greenPosX = 1200;
-        var greenPosY = 1200;
+        var greenPosX = 800;
+        var greenPosY = 800;
         var timer=45
+       
         var countdownintervolt;
         var gameintervolt;
         var lives=3
 
         function startTimer(){
+ 
+// Global flag to track the game state (paused or not)
+var isPaused = false;
+
+// Update the keydown event listener to handle the "L" key for pause/unpause
+document.addEventListener("keydown", function(event) {
+    // Handle arrow keys for movement and "L" for pause/unpause
+    if (event.key === "k" || event.key === "k") {
+        togglePause(); // Toggle the game state when "L" is pressed
+    }
+    if (!isPaused) { // Only allow movement if the game is not paused
+        switch(event.key) {
+            case "ArrowUp":
+                if (posY > 0) posY -= 15; // Move up
+                break;
+            case "ArrowDown":
+                if (posY + characterHeight < windowHeight) posY += 15; // Move down
+                break;
+            case "ArrowLeft":
+                if (posX > 0) posX -= 15; // Move left
+                break;
+            case "ArrowRight":
+                if (posX + characterWidth < windowWidth) posX += 15; // Move right
+                break;
+        }
+        character.style.top = posY + "px";
+        character.style.left = posX + "px";
+    }
+});
+
+// Function to toggle the pause state
+function togglePause() {
+    if (isPaused) {
+        // Unpause the game
+        isPaused = false;
+        startTimer(); // Restart the timer
+        gameInterval = setInterval(chaseRedCharacter, 9.5); // Resume the chase
+    } else {
+        // Pause the game
+        isPaused = true;
+        clearInterval(countdownInterval); // Stop the timer
+        clearInterval(gameInterval); // Stop the chase
+        timerobject.textContent = "PAUSED"; 
+
+
+
+        
+        
+    }
+}
+
+// Modify the startTimer function to be controllable
+function startTimer() {
+    if (isPaused) return; // Don't start the timer if the game is paused
+    timerobject.textContent = "timer: " + timer;
+    countdownInterval = setInterval(function() {
+        if (isPaused) return; // Stop the timer if paused
+        timer--;
+        timerobject.textContent = "timer: " + timer;
+        if (timer <= 0) {
+            timerobject.textContent = "GAME OVER";
+            if (lives > 0) {
+                livesobject.textContent = "YOU WIN";
+            }
+        }
+    }, 1000);
+}
+
+
+
+
+  
+
+
+            
             timerobject.textContent="timer: "+timer;
             countdownintervolt=setInterval(() => {
+                if(event.key){
+                    isPaused
+                }else{
+                    
+                }
                 timer--;
                 timerobject.textContent="timer: "+timer;
                 if(timer==0||timer<0){
@@ -321,6 +403,8 @@
     
         // Function to move the green character towards the red character
         function chaseRedCharacter() {
+
+            
             if(timer<=0){
                 return
             }
@@ -382,7 +466,7 @@
         }
     
         // Continuously move the green character towards the red character
-        setInterval(chaseRedCharacter, 9.5); // Adjust chase speed (30ms interval)
+        setInterval(chaseRedCharacter, 111.5); // Adjust chase speed (30ms interval)
         startTimer();
     </script>
 <!DOCTYPE html>
