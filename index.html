@@ -377,22 +377,22 @@ function startTimer() {
             switch(event.key) {
                 case "ArrowUp":
                     if (posY > 0) { // Check top boundary
-                        posY -= 25; // Move up
+                        posY -= 70; // Move up
                     }
                     break;
                 case "ArrowDown":
                     if (posY + characterHeight < windowHeight) { // Check bottom boundary
-                        posY += 25; // Move down
+                        posY += 70; // Move down
                     }
                     break;
                 case "ArrowLeft":
                     if (posX > 0) { // Check left boundary
-                        posX -= 25; // Move left
+                        posX -= 70; // Move left
                     }
                     break;
                 case "ArrowRight":
                     if (posX + characterWidth < windowWidth) { // Check right boundary
-                        posX += 25; // Move right
+                        posX += 70; // Move right
                     }
                     break;
             }
