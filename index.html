@@ -160,8 +160,9 @@
 </script>
 <body>
     <div class="tab">
-        <button class="tablinks"  onclick="openTab(event, 'Page1')">Page 1</button>
-        <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Page2')">Page 2</button>
+        <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Page1')">Page 1</button>
+        <button class="tablinks"  onclick="openTab(event, 'Page2')">Page 2</button>
+
     </div>
   
     <div id="Page1" class="tab-content">
@@ -273,7 +274,7 @@ var isPaused = false;
 // Update the keydown event listener to handle the "L" key for pause/unpause
 document.addEventListener("keydown", function(event) {
     // Handle arrow keys for movement and "L" for pause/unpause
-    if (event.key === "k" || event.key === "k") {
+    if (event.key === "k") {
         togglePause(); // Toggle the game state when "L" is pressed
     }
     if (!isPaused) { // Only allow movement if the game is not paused
@@ -480,6 +481,8 @@ function startTimer() {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       text-align: center;
     }
+
+
 
 
 
