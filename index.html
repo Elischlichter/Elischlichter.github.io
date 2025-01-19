@@ -134,6 +134,7 @@
     }
 
     function openTab(evt, tabName) {
+
         var i, tabContent, tabLinks;
 
         // Hide all tab contents
@@ -151,7 +152,12 @@
         // Show the current tab content and add an "active" class to the clicked button
         document.getElementById(tabName).style.display = "block";
         evt.currentTarget.className += " active";
+        // if(tabName=="Page2"){
+        //    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k'}))
+        //    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k'}))
+        // }
     }
+
 
     window.onload = function() {
         // Display the first tab by default
@@ -265,8 +271,10 @@
         var countdownintervolt;
         var gameintervolt;
         var lives=3
+        var isgamestarted=false
 
         function startTimer(){
+            isgamestarted=true
  
 // Global flag to track the game state (paused or not)
 var isPaused = false;
@@ -278,20 +286,20 @@ document.addEventListener("keydown", function(event) {
         togglePause(); // Toggle the game state when "L" is pressed
     }
     if (!isPaused) { // Only allow movement if the game is not paused
-        switch(event.key) {
-            case "ArrowUp":
-                if (posY > 0) posY -= 15; // Move up
-                break;
-            case "ArrowDown":
-                if (posY + characterHeight < windowHeight) posY += 15; // Move down
-                break;
-            case "ArrowLeft":
-                if (posX > 0) posX -= 15; // Move left
-                break;
-            case "ArrowRight":
-                if (posX + characterWidth < windowWidth) posX += 15; // Move right
-                break;
-        }
+        // switch(event.key) {
+        //     case "ArrowUp":
+        //         if (posY > 0) posY -= 15; // Move up
+        //         break;
+        //     case "ArrowDown":
+        //         if (posY + characterHeight < windowHeight) posY += 15; // Move down
+        //         break;
+        //     case "ArrowLeft":
+        //         if (posX > 0) posX -= 15; // Move left
+        //         break;
+        //     case "ArrowRight":
+        //         if (posX + characterWidth < windowWidth) posX += 15; // Move right
+        //         break;
+        // }
         character.style.top = posY + "px";
         character.style.left = posX + "px";
     }
@@ -352,6 +360,7 @@ function startTimer() {
                 timer--;
                 timerobject.textContent="timer: "+timer;
                 if(timer==0||timer<0){
+                    
                     timerobject.textContent="GAME OVER"
                     if(lives>0){
                         livesobject.textContent="YOU WIN"
@@ -379,6 +388,7 @@ function startTimer() {
                 case "ArrowUp":
                     if (posY > 0) { // Check top boundary
                         posY -= 17; // Move up
+                      
                     }
                     break;
                 case "ArrowDown":
@@ -428,12 +438,14 @@ function startTimer() {
     
             // Check for collision between red and green characters
             if (checkCollision(character, greenIcon)) {
+                
                
        
                 lives--;
                 livesobject.textContent="lives: "+lives;
         
-                if(lives==0||lives<0){
+                if(lives==0||lives<0 ){
+                    timer=0
                     livesobject.textContent="YOU LOST"
                     return
                 }
