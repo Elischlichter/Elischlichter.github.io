@@ -239,7 +239,7 @@
     </div>
 
     <div id="Page2" class="tab-content">
-        <h1> To start you have to press 'K' twice. Press 'K' to pausem, move Character with Arrow Keys to avoid the green guy. After you win or lose, refresh to play again,. z,c,v, do cool things!</h1>
+        <h1> To start you have to press 'K' twice. Press 'K' to pausem, move Character with Arrow Keys to avoid the green guy. After you win or lose, refresh to play again,. z,x,c, do cool things!</h1>
         <!-- Red character -->
         <div id="character" style="position: absolute; width: 50px; height: 50px; background-color: red; top: 100px; left: 100px;"></div>
         <!-- Green icon -->
@@ -493,9 +493,9 @@
             document.body.style.color = randomColor;
         }
 
-        if (event.key === "v") {
+        if (event.key === "x") {
             // Change the color of the green icon randomly
-            const iconColors = ["pink", "purple", "blue", "green", "red", "orange"];
+            const iconColors = ["pink", "purple", "blue", "green", "red", "orange" , "green"];
             const randomIconColor = iconColors[Math.floor(Math.random() * iconColors.length)];
             greenIcon.style.backgroundColor = randomIconColor;
         }
@@ -508,6 +508,22 @@
                 greenIcon.style.transform = "rotate(0deg)"; // Reset to original state
             }, 1000);
         }
+
+
+//         if(event.key === "v") {
+
+//             function toggleVisibility() {
+//     var element = document.getElementById('myElement');
+    
+//     // Hide the element
+//     element.style.display = 'none';
+
+//             setTimeout(function() {
+//       element.style.display = 'block';
+//     }, 2000);  // 2000 milliseconds = 2 seconds
+//   }
+
+//         }
 
         if (!isPaused) {
             handleMovement(event);  // Handle movement if game is not paused
