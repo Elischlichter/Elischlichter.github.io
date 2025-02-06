@@ -248,7 +248,88 @@
         <div id="timer" style="font-size: 28px;color:blanchedalmond">timer: 45</div>
         <div id="lives" style="font-size: 28px;color:blanchedalmond">lives: 3</div>
     </div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Countdown Timer with Voice</title>
+        <style>
+            .timer {
+                font-size: 48px;
+                font-weight: bold;
+                text-align: center;
+            }
+            button {
+                display: block;
+                margin: 20px auto;
+                padding: 10px;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
     
+        <div class="timer" id="timerDisplay">3</div>
+        <button onclick="startCountdown()">Start Countdown</button>
+    
+        <script>
+            let countdownTime = 3; // 3 seconds for the example, change as needed
+            let timerInterval;
+    
+            // Function to start countdown
+            function startCountdown() {
+                if (timerInterval) clearInterval(timerInterval);
+                
+                timerInterval = setInterval(updateTimer, 1000);
+            }
+    
+            // Function to update the timer
+            function updateTimer() {
+                if (countdownTime <= 0) {
+                    clearInterval(timerInterval);
+                    speak("Start!");
+                    document.getElementById('timerDisplay').textContent = "Start!";
+                    startGame();  // Trigger the start of the game
+                    return;
+                }
+    
+                let minutes = Math.floor(countdownTime / 60);
+                let seconds = countdownTime % 60;
+    
+                // Format time to MM:SS
+                let timeString = `${padZero(minutes)}:${padZero(seconds)}`;
+                document.getElementById('timerDisplay').textContent = timeString;
+    
+                countdownTime--;
+            }
+    
+            // Function to pad single digits with a leading zero
+            function padZero(number) {
+                return number < 10 ? '0' + number : number;
+            }
+    
+            // Function to speak a message
+            function speak(message) {
+                const speech = new SpeechSynthesisUtterance(message);
+                window.speechSynthesis.speak(speech);
+            }
+    
+            // Function to start the game (triggered when timer hits 0)
+            function startGame() {
+                alert("Game started! Good luck!");
+                // You can add more logic here to start the actual game
+            }
+        </script>
+    
+    </body>
+    </html>
+    
+    </script>
+
+</body>
+</html>
+
     <script>
         // Select the elements
         var character = document.getElementById("character");
