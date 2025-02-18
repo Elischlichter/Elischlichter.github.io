@@ -399,75 +399,143 @@
         var isGameStarted = false;
         var isPaused = false;
     
-        // Function to start the game
+        var redChaseInterval;
+        var blueChaseInterval;
+
         function startGame() {
-            if (isGameStarted) return; // Prevent starting the game multiple times
-        
+            if (isGameStarted) return;
+            
             isGameStarted = true;
-        
+            
             // Reset game state
-            posX = 100; posY = 100;
+            redPosX = 100; redPosY = 100;
+            bluePosX = 1200; bluePosY = 500;
             greenPosX = 800; greenPosY = 800;
             tealPosX = 100; tealPosY = 500;
             timer = 45;
             lives = numberOfPlayers == 1 ? 3 : 4;
-        
+            
             // Update the UI
             timerObject.textContent = "timer: " + timer;
             livesObject.textContent = "lives: " + lives;
-        
+            
             // Timer countdown logic
-            countdownInterval = setInterval(function() {
-                if (isPaused) return;  // Stop the timer if paused
+            timerInterval = setInterval(function() {
+                if (isPaused) return;
                 timer--;
                 timerObject.textContent = "timer: " + timer;
-        
+                
                 if (timer <= 0) {
                     timerObject.textContent = "GAME OVER";
                     livesObject.textContent = (lives > 0) ? "YOU WIN" : "YOU LOST";
-                    clearInterval(countdownInterval);
-                    clearInterval(gameInterval);
+                    clearAllIntervals();
                 }
             }, 1000);
-    
-            // Set the game loop
-            gameInterval = setInterval(chaseRedCharacter, 10); // Continue the game loop
-            gameInterval = setInterval(chaseBlueCharacter, 10); // Continue the game loop
+
+            // Set separate intervals for each chase function
+            redChaseInterval = setInterval(chaseRedCharacter, 10);
+            blueChaseInterval = setInterval(chaseBlueCharacter, 10);
         }
-        
-        // Pause and Unpause function
+
+        function clearAllIntervals() {
+            clearInterval(timerInterval);
+            clearInterval(redChaseInterval);
+            clearInterval(blueChaseInterval);
+        }
+
         function togglePause() {
             isPaused = !isPaused;
             if (isPaused) {
-                clearInterval(countdownInterval);
-                clearInterval(gameInterval);
-                timerObject.textContent = "PAUSED"; // Show "PAUSED" when the game is paused
+                clearAllIntervals();
+                timerObject.textContent = "PAUSED";
             } else {
-                // Restart the game intervals if not paused
                 if (!isGameStarted) {
-                    startGame(); // If the game hasn't started yet, start it
+                    startGame();
                 } else {
-                    // Restart the intervals to resume the game and the timer
-                    countdownInterval = setInterval(function() {
+                    // Restart all intervals
+                    timerInterval = setInterval(function() {
                         if (isPaused) return;
                         timer--;
                         timerObject.textContent = "timer: " + timer;
-    
+                        
                         if (timer <= 0) {
                             timerObject.textContent = "GAME OVER";
                             livesObject.textContent = (lives > 0) ? "YOU WIN" : "YOU LOST";
-                            clearInterval(countdownInterval);
-                            clearInterval(gameInterval);
+                            clearAllIntervals();
                         }
                     }, 1000);
                     
-                    gameInterval = setInterval(chaseRedCharacter, 10);  // Restart the game loop
-                    gameInterval = setInterval(chaseBlueCharacter, 10);  // Restart the game loop
-                    timerObject.textContent = "timer: " + timer; // Make sure the timer is updated when unpaused
+                    redChaseInterval = setInterval(chaseRedCharacter, 10);
+                    blueChaseInterval = setInterval(chaseBlueCharacter, 10);
+                    timerObject.textContent = "timer: " + timer;
                 }
             }
         }
 
+        // Modify chase functions to respect pause state
+        function chaseRedCharacter() {
+            if (timer <= 0 || lives <= 0 || isPaused) return;
+            
+            // Rest of the chase logic remains the same
+            var dx = redPosX - greenPosX;
+            var dy = redPosY - greenPosY;
+            var distance = Math.sqrt(dx * dx + dy * dy);
+            
+            var speed = 2;
+            
+            if (distance > 1) {
+                greenPosX += (dx / distance) * speed;
+                greenPosY += (dy / distance) * speed;
+                
+                greenIcon.style.top = greenPosY + "px";
+                greenIcon.style.left = greenPosX + "px";
+            }
+            
+            if (checkCollision(character, greenIcon)) {
+                lives--;
+                livesObject.textContent = "lives: " + lives;
+                
+                if (lives <= 0) {
+                    timer = 0;
+                    livesObject.textContent = "YOU LOST";
+                    clearAllIntervals();
+                }
+                
+                moveGreenIconRandomly();
+            }
+        }
+
+        function chaseBlueCharacter() {
+            if (timer <= 0 || lives <= 0 || isPaused || numberOfPlayers == 1) return;
+            
+            // Rest of the chase logic remains the same
+            var dx = bluePosX - tealPosX;
+            var dy = bluePosY - tealPosY;
+            var distance = Math.sqrt(dx * dx + dy * dy);
+            
+            var speed = 2;
+            
+            if (distance > 1) {
+                tealPosX += (dx / distance) * speed;
+                tealPosY += (dy / distance) * speed;
+                
+                tealIcon.style.top = tealPosY + "px";
+                tealIcon.style.left = tealPosX + "px";
+            }
+            
+            if (checkCollision(blueIcon, tealIcon)) {
+                lives--;
+                livesObject.textContent = "lives: " + lives;
+                
+                if (lives <= 0) {
+                    timer = 0;
+                    livesObject.textContent = "YOU LOST";
+                    clearAllIntervals();
+                }
+                
+                moveTealIconRandomly();
+            }
+        }
         // Handle movement for red character (arrow keys)
         function handleRedMovement(event) {
             if (lives <= 0 || timer <= 0 || isPaused) return;
