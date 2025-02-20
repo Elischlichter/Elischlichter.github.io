@@ -309,7 +309,7 @@
             document.getElementById('2playerButton').style.display = 'none';
 
             numberOfPlayers = 2
-            lives = 5;
+            lives = 4;
         }
 
         // Function to update the timer
@@ -437,12 +437,84 @@
             blueChaseInterval = setInterval(chaseBlueCharacter, 10);
         }
 
+        // Add key state tracking at the top with other variables
+        var keysPressed = {};
+
+        // Modify the keydown and add keyup event listeners
+        document.addEventListener("keydown", function(event) {
+            keysPressed[event.key] = true;
+
+            if (event.key === "k") {
+                togglePause();
+                return;
+            }
+
+            // Handle special effects
+            if (["z", "x", "c", "v"].includes(event.key)) {
+                handleSpecialEffects(event);
+            }
+        });
+
+        document.addEventListener("keyup", function(event) {
+            delete keysPressed[event.key];
+        });
+
+        // Create a new function to handle continuous movement
+        function updateCharacterPositions() {
+            if (lives <= 0 || timer <= 0 || isPaused) return;
+
+            var characterWidth = character.offsetWidth;
+            var characterHeight = character.offsetHeight;
+            var windowWidth = window.innerWidth;
+            var windowHeight = window.innerHeight;
+
+            // Handle red character movement (arrow keys)
+            if (keysPressed["ArrowUp"] && redPosY > 0) {
+                redPosY -= 23.5;
+            }
+            if (keysPressed["ArrowDown"] && redPosY + characterHeight < windowHeight) {
+                redPosY += 23.5;
+            }
+            if (keysPressed["ArrowLeft"] && redPosX > 0) {
+                redPosX -= 23.5;
+            }
+            if (keysPressed["ArrowRight"] && redPosX + characterWidth < windowWidth) {
+                redPosX += 23.5;
+            }
+
+            // Handle blue character movement (WASD keys)
+            if (keysPressed["w"] && bluePosY > 0) {
+                bluePosY -= 19.5;
+            }
+            if (keysPressed["s"] && bluePosY + characterHeight < windowHeight) {
+                bluePosY += 19.5;
+            }
+            if (keysPressed["a"] && bluePosX > 0) {
+                bluePosX -= 19.5;
+            }
+            if (keysPressed["d"] && bluePosX + characterWidth < windowWidth) {
+                bluePosX += 19.5;
+            }
+
+            // Update character positions
+            character.style.top = redPosY + "px";
+            character.style.left = redPosX + "px";
+            blueIcon.style.top = bluePosY + "px";
+            blueIcon.style.left = bluePosX + "px";
+        }
+
+        // Add movement interval to the startGame function (add this inside startGame())
+        var movementInterval = setInterval(updateCharacterPositions, 50); // ~60fps
+
+        // Update clearAllIntervals function
         function clearAllIntervals() {
             clearInterval(timerInterval);
             clearInterval(redChaseInterval);
             clearInterval(blueChaseInterval);
+            clearInterval(movementInterval);
         }
 
+        // Update togglePause function to handle movement interval
         function togglePause() {
             isPaused = !isPaused;
             if (isPaused) {
@@ -452,7 +524,6 @@
                 if (!isGameStarted) {
                     startGame();
                 } else {
-                    // Restart all intervals
                     timerInterval = setInterval(function() {
                         if (isPaused) return;
                         timer--;
@@ -467,11 +538,11 @@
                     
                     redChaseInterval = setInterval(chaseRedCharacter, 10);
                     blueChaseInterval = setInterval(chaseBlueCharacter, 10);
+                    movementInterval = setInterval(updateCharacterPositions, 16);
                     timerObject.textContent = "timer: " + timer;
                 }
             }
         }
-
         // Modify chase functions to respect pause state
         function chaseRedCharacter() {
             if (timer <= 0 || lives <= 0 || isPaused) return;
@@ -593,27 +664,6 @@
             blueIcon.style.top = bluePosY + "px";
             blueIcon.style.left = bluePosX + "px";
         }
-
-        // Combined keydown event handler
-        document.addEventListener("keydown", function(event) {
-            if (event.key === "k") {
-                togglePause();
-                return;
-            }
-
-            // Handle special effects (z, x, c, v keys)
-            if (["z", "x", "c", "v"].includes(event.key)) {
-                handleSpecialEffects(event);
-                return;
-            }
-
-            // Handle character movement
-            if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)) {
-                handleRedMovement(event);
-            } else if (["w", "s", "a", "d"].includes(event.key)) {
-                handleBlueMovement(event);
-            }
-        });
 
         // Function to handle special effects
         function handleSpecialEffects(event) {
