@@ -242,11 +242,11 @@
 
     <div id="Page2" class="tab-content">
         <h1> To start you have to press '1 player, 2 player' then press "start button". Press 'K' to pause, move character and if you choose 2 player move with W,A,S,D and if you choose 1 player move with arrow keys to avoid the green and blue guy. After you win or lose, refresh to play again. Press z,x,c,v to do cool things!</h1>
-        <!-- Player 1 character -->
-        <div id="character" style="position: absolute; width: 50px; height: 50px; background-color: red; top: 100px; left: 100px;"></div>
-        <!-- Player 2 icon -->
+
+         <div id="character" style="position: absolute; width: 50px; height: 50px; background-color: red; top: 100px; left: 100px;"></div> -->
+        Player 2 icon
         <div id="blueIcon" style="position:absolute; width: 50px; height: 50px; background-color:rgb(0, 102, 255); top: 500px; left: 1200px;"></div>
-        <!-- First bad guy -->
+  
         <div id="greenIcon" style="position: absolute; width: 50px; height: 50px; background-color: green; top: 200px; left: 1200px;"></div>
         <!-- Seond bad guy -->
         <div id="tealIcon" style="position: absolute; width: 50px; height: 50px; background-color: rgb(28, 238, 238); top: 500px; left: 100px;"></div>
@@ -576,16 +576,16 @@
 
             switch(event.key) {
                 case "w":
-                    if (bluePosY > 0) bluePosY -= 19.5;
+                    if (bluePosY > 0) bluePosY -= 17.5;
                     break;
                 case "s":
-                    if (bluePosY + characterHeight < windowHeight) bluePosY += 19.5;
+                    if (bluePosY + characterHeight < windowHeight) bluePosY += 17.5;
                     break;
                 case "a":
-                    if (bluePosX > 0) bluePosX -= 19.5;
+                    if (bluePosX > 0) bluePosX -= 17.5;
                     break;
                 case "d":
-                    if (bluePosX + characterWidth < windowWidth) bluePosX += 19.5;
+                    if (bluePosX + characterWidth < windowWidth) bluePosX += 17.5;
                     break;
             }
 
@@ -779,4 +779,4 @@
         
       font-family: 'Arial', 'Courier New', 'Courier New', Courier New;
       text-align: center;
-    }
+    } -->
