@@ -484,16 +484,16 @@
 
             // Handle blue character movement (WASD keys)
             if (keysPressed["w"] && bluePosY > 0) {
-                bluePosY -= 19.5;
+                bluePosY -= 17.5;
             }
             if (keysPressed["s"] && bluePosY + characterHeight < windowHeight) {
-                bluePosY += 19.5;
+                bluePosY += 17.5;
             }
             if (keysPressed["a"] && bluePosX > 0) {
-                bluePosX -= 19.5;
+                bluePosX -= 17.5;
             }
             if (keysPressed["d"] && bluePosX + characterWidth < windowWidth) {
-                bluePosX += 19.5;
+                bluePosX += 17.5;
             }
 
             // Update character positions
@@ -618,16 +618,16 @@
 
             switch(event.key) {
                 case "ArrowUp":
-                    if (redPosY > 0) redPosY -= 23.5;
+                    if (redPosY > 0) redPosY -= 17.5;
                     break;
                 case "ArrowDown":
-                    if (redPosY + characterHeight < windowHeight) redPosY += 23.5;
+                    if (redPosY + characterHeight < windowHeight) redPosY += 17.5;
                     break;
                 case "ArrowLeft":
-                    if (redPosX > 0) redPosX -= 23.5;
+                    if (redPosX > 0) redPosX -= 17.5;
                     break;
                 case "ArrowRight":
-                    if (redPosX + characterWidth < windowWidth) redPosX += 23.5;
+                    if (redPosX + characterWidth < windowWidth) redPosX += 17.5;
                     break;
             }
 
