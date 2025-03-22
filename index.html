@@ -470,30 +470,30 @@
 
             // Handle red character movement (arrow keys)
             if (keysPressed["ArrowUp"] && redPosY > 0) {
-                redPosY -= 14.5;
+                redPosY -= 12.5;
             }
             if (keysPressed["ArrowDown"] && redPosY + characterHeight < windowHeight) {
-                redPosY += 14.5;
+                redPosY += 12.5;
             }
             if (keysPressed["ArrowLeft"] && redPosX > 0) {
-                redPosX -= 14.5;
+                redPosX -= 13.5;
             }
             if (keysPressed["ArrowRight"] && redPosX + characterWidth < windowWidth) {
-                redPosX += 14.5;
+                redPosX += 12.5;
             }
 
             // Handle blue character movement (WASD keys)
             if (keysPressed["w"] && bluePosY > 0) {
-                bluePosY -= 14.5;
+                bluePosY -= 12.5;
             }
             if (keysPressed["s"] && bluePosY + characterHeight < windowHeight) {
-                bluePosY += 14.5;
+                bluePosY += 12.5;
             }
             if (keysPressed["a"] && bluePosX > 0) {
-                bluePosX -= 14.5;
+                bluePosX -= 12.5;
             }
             if (keysPressed["d"] && bluePosX + characterWidth < windowWidth) {
-                bluePosX += 14.5;
+                bluePosX += 12.5;
             }
 
             // Update character positions
@@ -676,11 +676,11 @@
                     const colors = ["cyan", "magenta", "lime", "orange", "yellow", "red"];
                     document.body.style.color = colors[Math.floor(Math.random() * colors.length)];
                     const iconColors = ["pink", "purple", "blue", "green", "red", "orange", "green", "purple", "cyan", "black", "magenta", "brown"];
-                    greenIcon.style.backgroundColor = iconColors[Math.floor(Math.random() * iconColors.length)];
+                    character.style.backgroundColor = iconColors[Math.floor(Math.random() * iconColors.length)];
                     break;
                 case "c":
-                    greenIcon.style.transition = "transform 1s";
-                    greenIcon.style.transform = "rotate(360deg)";
+                    character.style.transition = "transform 1s";
+                    character.style.transform = "rotate(360deg)";
                     setTimeout(() => greenIcon.style.transform = "rotate(0deg)", 1000);
                     break;
                 case "v":
