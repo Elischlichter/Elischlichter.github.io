@@ -538,7 +538,7 @@
                     
                     redChaseInterval = setInterval(chaseRedCharacter, 10);
                     blueChaseInterval = setInterval(chaseBlueCharacter, 10);
-                    movementInterval = setInterval(updateCharacterPositions, 16);
+                    movementInterval = setInterval(updateCharacterPositions, 40);
                     timerObject.textContent = "timer: " + timer;
                 }
             }
@@ -681,7 +681,7 @@
                 case "c":
                     character.style.transition = "transform 1s";
                     character.style.transform = "rotate(360deg)";
-                    setTimeout(() => greenIcon.style.transform = "rotate(0deg)", 1000);
+                    setTimeout(() => greenIcon.style.transform = "rotate(0deg)", 2000);
                     break;
                 case "v":
                     greenIcon.style.display = 'none';
