@@ -1,260 +1,842 @@
+
+
+<style>
+    body {
+        background-image: url('Background.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    h1 {
+        color: rgb(110, 178, 32);
+        font-size: 22.5px;
+    }
+    p {
+        color: rgb(153, 183, 30);
+        font-size: 18px;
+    }
+    a {
+        color: rgb(15, 201, 215);
+        font-size: 18px;
+    }
+    h2 {
+        color: rgb(251, 244, 244);
+        font-style: Courier New;
+    }
+</style>
+<script>
+    function checkagefunction(){
+       
+        let age = document.getElementById("agebox").value;
+        if(age==2||age==3||age==4||age==5||age==6||age==7){
+            document.getElementById("subwaysurfers").style.display="inline";
+            document.getElementById("snake.io").style.display="inline";
+            document.getElementById("goingballs").style.display="inline";
+            document.getElementById("poki").style.display="inline";
+            document.getElementById("slope").style.display="inline";
+            document.getElementById("google").style.display="inline";
+            document.getElementById("57").style.display="inline";
+            document.getElementById("battle").style.display="inline";
+            document.getElementById("eagle").style.display="inline";
+            document.getElementById("battle").style.display="inline";
+            document.getElementById("dogs").style.display="inline";
+            document.getElementById("gitlab").style.display="inline";
+            document.getElementById("pee").style.display="inline";
+            document.getElementById("xone").style.display="inline";
+
+
+
+
+
+            document.getElementById("age812").style.display="none";
+            document.getElementById("yoho").style.display="none";
+            document.getElementById("brawlstars").style.display="none";
+            document.getElementById("ovo").style.display="none";
+            document.getElementById("1317").style.display="none";
+            document.getElementById("callofduty").style.display="none";
+            document.getElementById("callofduty2").style.display="none";
+            document.getElementById("crushmatchmaking").style.display="none";
+            document.getElementById("yohoho.io").style.display="none";
+            document.getElementById("cookieclicker").style.display="none";
+            document.getElementById("artclass").style.display="none";
+            document.getElementById("sun").style.display="none";
+            document.getElementById("mario").style.display="none";
+            document.getElementById("football").style.display="none";
+            document.getElementById("dude").style.display="none";
+            document.getElementById("artclass").style.display="none";
+            document.getElementById("cookieclicker").style.display="none";
+            document.getElementById("moon").style.display="none";
+            document.getElementById("slope").style.display="none";
+            document.getElementById("crossy").style.display="none";
+            document.getElementById("bros").style.display="none";
+            document.getElementById("noon").style.display="none";
+            document.getElementById("poop").style.display="none";
+            document.getElementById("noob").style.display="none";
+            document.getElementById("noo").style.display="none";
+            document.getElementById("xone").style.display="none";
+            document.getElementById("xoness").style.display="none";
+            document.getElementById("dudes").style.display="none";
+
+           
+  
+
+            
+
+        } else if(age==8||age==9||age==10||age==11||age==12){
+            document.getElementById("crushmatchmaking").style.display="none";
+            document.getElementById("callofduty").style.display="none";
+            document.getElementById("callofduty2").style.display="none";
+            document.getElementById("crossy").style.display="none";
+            document.getElementById("yoho").style.display="none";
+            document.getElementById("slope").style.display="none";
+            document.getElementById("moon").style.display="none";
+            document.getElementById("1317").style.display="none";
+            document.getElementById("cookieclicker").style.display="none";
+            document.getElementById("slope").style.display="none";
+            document.getElementById("google").style.display="inline";
+            document.getElementById("cookieclicker").style.display="none";
+            document.getElementById("brawlstars").style.display="inline";
+            document.getElementById("artclass").style.display="inline";
+            document.getElementById("spew").style.display="inline";
+            document.getElementById("vex-5").style.display="inline";
+            document.getElementById("yohoho.io").style.display="inline";
+            document.getElementById("ovo").style.display="inline";
+            document.getElementById("age812").style.display="inline";
+            document.getElementById("bros").style.display="inline";
+            document.getElementById("sun").style.display="none";
+            document.getElementById("dude").style.display="none";
+            document.getElementById("noon").style.display="none";
+            document.getElementById("poop").style.display="none";
+            document.getElementById("noob").style.display="none";
+            document.getElementById("noo").style.display="none";
+            document.getElementById("dudes").style.display="none";
+            document.getElementById("xoness").style.display="none";
+  
+
+        
+
+        } else if(age==13||age==14||age==15||age==16||age==17||age>17){
+            document.getElementById("crushmatchmaking").style.display="inline";
+            document.getElementById("callofduty").style.display="inline";
+            document.getElementById("callofduty2").style.display="inline";
+            document.getElementById("goingballs").style.display="inline";
+            document.getElementById("snake.io").style.display="inline";
+            document.getElementById("subwaysurfers").style.display="inline";
+            document.getElementById("1317").style.display="inline";
+            document.getElementById("57").style.display="inline";
+            document.getElementById("poki").style.display="inline";
+            document.getElementById("yoho").style.display="inline";
+            document.getElementById("games1").style.display="inline";
+            document.getElementById("cookieclicker").style.display="inline";
+            document.getElementById("slope").style.display="inline";
+            document.getElementById("google").style.display="inline";
+            document.getElementById("brawlstars").style.display = "inline";  // This is now visible
+            document.getElementById("artclass").style.display="inline";
+            document.getElementById("spew").style.display="inline";
+            document.getElementById("vex-5").style.display="inline";
+            document.getElementById("yohoho.io").style.display="inline";
+            document.getElementById("dude").style.display="inline";
+            document.getElementById("age812").style.display="inline";
+            document.getElementById("noon").style.display="inline";
+            document.getElementById("poop").style.display="inline";
+            document.getElementById("noob").style.display="inline";
+            document.getElementById("noo").style.display="inline";
+            document.getElementById("xoness").style.display="inline";
+        }
+        
+    }
+
+    function openTab(evt, tabName) {
+
+        var i, tabContent, tabLinks;
+
+        // Hide all tab contents
+        tabContent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabContent.length; i++) {
+            tabContent[i].style.display = "none";
+        }
+
+        // Remove the active class from all buttons
+        tabLinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tabLinks.length; i++) {
+            tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab content and add an "active" class to the clicked button
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+        // if(tabName=="Page2"){
+        //    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k'}))
+        //    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k'}))
+        // }
+    }
+
+
+    window.onload = function() {
+        // Display the first tab by default
+        document.getElementById("defaultOpen").click();
+    }
+</script>
+<body>
+    <div class="tab">
+        <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Page1')">Page 1</button>
+        <button class="tablinks"  onclick="openTab(event, 'Page2')">Page 2</button>
+
+    </div>
+  
+    <div id="Page1" class="tab-content">
+        <h1>Fun games for your age</h1>
+        <input type="text" id="agebox" placeholder="Enter age to play">
+        <button onclick="checkagefunction()" style="background-color: blue; color: white; font-size: 20px; padding: 10px 20px; border-radius: 5px;">Submit</button>
+       
+        <p>This website has games that are appropriat for your age</p>
+      
+        <h2  id="57">age 2-7</h2>
+        
+        <a id="subwaysurfers" href="https://subwaysurf.io/play#:~:text=Subway%20Surfers%20is%20an%20endless%20runner">subway surfers</a><br>
+        <a id="snake.io" href="https://snake.io/">Snake.io</a><br>
+        <a id="goingballs" href="https://kizi.com/games/going-balls">going balls</a>
+        <a id="poki" href="https://poki.com/#:~:text=Poki%20has%20the%20best%20free%20online?msockid=249b1f7576b266df3a370a7d77e06724">poki</a><br>
+        <a id="xtrenchrun" href="https://kizi.com/games/going-balls">x trench run</a><br>
+        
+        <a id="google" href="https://sites.google.com/view/fxyre">google sites</a><br>
+   
+        <a id="mindcraft" href="https://unblocked-minecraft.github.io/">ublocked github games</a><br>
+
+        <a id="2player" href="https://2player-games.github.io/">2 player games</a><br>
+        <a id="eagle" href="https://eaglercraftonline.gitlab.io/go/growmi.html"> eagle craft</a><br>
+        <a id="battle" href="https://iogamesco.gitlab.io/tags/battle-royale/">battle-royale </a><br>
+        <a id="tags" href="https://iogamesco.gitlab.io/tags/battle-royale/">art class </a><br>
+        <a id="gitlab" href="https://asmallworldcup.gitlab.io/">a small world cup</a><br>
+        <a id="pee" href="https://snow-rider-3d.gitlab.io/">snow-rider</a><br>
+        <a id="dogs" href="https://dreadheadparkour.gitlab.io/">dreadheadpar</a><br>
+        <a id="xone" href="https://sites.google.com/view/xneosite/gxmes/html-games/s/subway-surfers-world-tour/subway-surfers-london">xone</a><br>
+        <br><br>
+    
+        
+        
+        <h2   id="age812">age 8-12</h2>
+        <div id="brawlstars">
+            <img src="brawlstars.jpg" width="100" height="75">
+            <a id="brawlstars"href="https://supercell.com/en/games/brawlstars/">brawl stars</a><br>
+            <a id="bikeracing"href="https://www.msn.com/en-us/play/games/bike-racing-1/cg-9p70lt0zr384?ocid=cganswer&cgfrom=cg_ans_rightrail_game">Bike racing 1</a><br>
+            <a href="#">phaser game</a><br>
+            <a id="yohoho.io" href="https://yoho2.top/">yohoho.io</a><br>
+            <a id="artclass" href="https://obiudon.easterndns.com/load.html?game=brawlguys">art class</a><br>
+            <a id="spew" href="https://spew45.github.io/games/subway-surfers.html">spew45</a><br>
+            <a id="vex-5" href="https://vex-5.github.io/category/shooting.html">vex-5</a><br>
+             <a id="2player" href="https://2player-games.github.io/">2 player games</a><br>
+             <a id="mario" href="https://super-mario-64.gitlab.io/"> super-mario-64</a><br>
+             <a id="ovo" href="https://ovogame.gitlab.io/">OVO games</a><br>
+             <a id="bros" href="https://bloons-td.gitlab.io/">bloons</a><br>
+             <a id="football" href="https://2minutefootball.gitlab.io/">2 minute football</a><br>
+             <a id="xones" href="https://sites.google.com/ottumwaschools.com/viewglobal/home-base">2 Cool website</a><br>
+
+        </div>
+        <br>
+        
+        
+        <h2   id="1317">age 13-17</h2>
+        <img   id="callofduty" src="callofduty.jpg" width="100" height="75">
+        <a id="callofduty2" href="https://www.callofduty.com/#:~:text=Call%20of%20Duty%C2%AE%20|%20Best-Selling%20Video">call of duty</a><br>
+        <a id="crushmatchmaking" href="https://www.thecalculator.co/love/Love-Calculator-by-Name-18.html#:~:text=This%20love%20calculator%20by%20name%20returns">crush matchmaking</a><br>
+        <a id="yoho" href="https://yoho2.top/">yoho2.top</a><br>
+        <a id="cookieclicker" href="https://welldeef.github.io">cookie clicker</a><br>
+        <a id="slope"  href="https://theslope.github.io">slope unblocked</a><br>
+        <a id="crossy" href="https://crossyroad-game.github.io/">crossy road</a><br>
+        <a id="moon"  href="https://sites.google.com/view/unblocked-games-76-new/survival">google 76</a><br>
+        <a id="sun"  href="https://ubggo.github.io/ub-games/">ubggo games</a><br>
+        <a id="noon" href="https://superliquidsoccer.gitlab.io/go/stickman-bike.html">super liguid soccer</a><br>
+        <a id="poop" href="https://drift-boss.gitlab.io/">drift boss but better</a><br>
+        <a id="noob" href="https://idlestartuptycoon.gitlab.io/">idle start up</a><br>
+        <a id="dude"  href="https://unicycle-hero.gitlab.io/">unicycle-hero</a><br>
+        <a id="dudes"  href="https://sites.google.com/fcpsschools.net/dotstudios/collabs-currently">The Dot site</a><br>
+        <a id="xoness"  href="https://sites.google.com/view/theschoolergames/games/1v1-lol">1v1-lol</a><br>
+    </div>
+
+    <div id="Page2" class="tab-content">
+        <h1> To start you have to press '1 player, 2 player' then press "start button". Press 'K' to pause, player #2 move with W,A,S,D player #1 move with arrow keys. After you win or lose, refresh to play again. Press z,x,,v to do cool things!</h1>
+
+         <div id="character" style="position: absolute; width: 50px; height: 50px; background-color: red; top: 100px; left: 100px;"></div> 
+    
+        <div id="blueIcon" style="position:absolute; width: 50px; height: 50px; background-color:rgb(0, 102, 255); top: 500px; left: 1200px;"></div>
+  
+        <div id="greenIcon" style="position: absolute; width: 50px; height: 50px; background-color: green; top: 200px; left: 1200px;"></div>
+      
+        <div id="tealIcon" style="position: absolute; width: 50px; height: 50px; background-color: rgb(28, 238, 238); top: 500px; left: 100px;"></div>
+
+        <div id="timer" style="font-size: 28px;color:blanchedalmond">timer: 45</div>
+        <div id="lives" style="font-size: 28px;color:blanchedalmond">lives: 3</div>
+        <div class="timer" id="timerDisplay">3</div>
+        <button id="startButton" onclick="startCountdown()" style="display: none">Start button</button>
+        <button id="1playerButton" onclick="chose1Player()" >1 Player</button>
+        <button id="2playerButton" onclick="chose2Player()" >2 Player</button>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> fire games </title>
+    <style>
+        .timer {
+            font-size: 48px;
+            color: rgb(196, 230, 173); /* Lighter color for the timer */
+            text-align: center;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let countdownTime = 3; // 3 seconds for the example, change as needed
+        let timerInterval;
+        let numberOfPlayers = 2;
+        var lives = 3;
+
+        // Function to start countdown
+        function startCountdown() {
+            document.getElementById('startButton').style.display = 'none';
+            if (timerInterval) clearInterval(timerInterval);
+
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function chose1Player () {
+            document.getElementById('startButton').style.display = 'inline';
+            document.getElementById('1playerButton').style.display = 'none';
+            document.getElementById('2playerButton').style.display = 'none';
+            
+            document.getElementById('tealIcon').style.display = 'none';
+            document.getElementById('blueIcon').style.display = 'none';
+
+            numberOfPlayers = 1
+        }
+        function chose2Player () {
+            document.getElementById('startButton').style.display = 'inline';
+            document.getElementById('1playerButton').style.display = 'none';
+            document.getElementById('2playerButton').style.display = 'none';
+
+            numberOfPlayers = 2
+            lives = 4;
+        }
+
+        // Function to update the timer
+        function updateTimer() {
+            if (countdownTime <= 0) {
+                clearInterval(timerInterval);
+                speak("Start!");
+                document.getElementById('timerDisplay').textContent = "Start!";
+                startGame();  // Trigger the start of the game
+                return;
+            }
+
+            let minutes = Math.floor(countdownTime / 60);
+            let seconds = countdownTime % 60;
+
+            // Format time to MM:SS
+            let timeString = `${padZero(minutes)}:${padZero(seconds)}`;
+            document.getElementById('timerDisplay').textContent = timeString;
+
+            countdownTime--;
+        }
+
+        // Function to pad single digits with a leading zero
+        function padZero(number) {
+            return number < 10 ? '0' + number : number;
+        }
+
+        // Function to speak a message
+        function speak(message) {
+            const speech = new SpeechSynthesisUtterance(message);
+            window.speechSynthesis.speak(speech);
+        }
+
+        // Function to start the game (triggered when timer hits 0)
+        function startGame() {
+            alert("Game started! Good luck!");
+            // You can add more logic here to start the actual game
+
+
+
+
+            
+        }
+    </script>
+</body>
+</html>
+
+    <!-- page1.html -->
+    
+
+
+
+            
+
+            
+
+
+
+            
+        </script>
+    
+    </body>
+    </html>
+    
+    </script>
+
+</body>
+</html>
+
+    <script>
+        // Select the elements
+        var character = document.getElementById("character");
+        var greenIcon = document.getElementById("greenIcon");
+        var tealIcon = document.getElementById("tealIcon");
+        var blueIcon = document.getElementById("blueIcon");
+        var timerObject = document.getElementById("timer");
+        var livesObject = document.getElementById("lives");
+
+        // Separate position variables for red and blue characters
+        var redPosX = 100, redPosY = 100;
+        var bluePosX = 1200, bluePosY = 500;
+        var greenPosX = 800, greenPosY = 800;
+        var tealPosX = 100, tealPosY = 500;
+
+        // Game state variables
+        var timer = 45;
+        var isGameStarted = false;
+        var isPaused = false;
+    
+        var redChaseInterval;
+        var blueChaseInterval;
+
+        function startGame() {
+            if (isGameStarted) return;
+            
+            isGameStarted = true;
+            
+            // Reset game state
+            redPosX = 100; redPosY = 100;
+            bluePosX = 1200; bluePosY = 500;
+            greenPosX = 800; greenPosY = 800;
+            tealPosX = 100; tealPosY = 500;
+            timer = 45;
+            lives = numberOfPlayers == 1 ? 3 : 4;
+            
+            // Update the UI
+            timerObject.textContent = "timer: " + timer;
+            livesObject.textContent = "lives: " + lives;
+            
+            // Timer countdown logic
+            timerInterval = setInterval(function() {
+                if (isPaused) return;
+                timer--;
+                timerObject.textContent = "timer: " + timer;
+                
+                if (timer <= 0) {
+                    timerObject.textContent = "GAME OVER";
+                    livesObject.textContent = (lives > 0) ? "YOU WIN" : "YOU LOST";
+                    clearAllIntervals();
+                }
+            }, 1000);
+
+            // Set separate intervals for each chase function
+            redChaseInterval = setInterval(chaseRedCharacter, 10);
+            blueChaseInterval = setInterval(chaseBlueCharacter, 10);
+        }
+
+        // Add key state tracking at the top with other variables
+        var keysPressed = {};
+
+        // Modify the keydown and add keyup event listeners
+        document.addEventListener("keydown", function(event) {
+            keysPressed[event.key] = true;
+
+            if (event.key === "k") {
+                togglePause();
+                return;
+            }
+
+            // Handle special effects
+            if (["z", "x", "c", "v"].includes(event.key)) {
+                handleSpecialEffects(event);
+            }
+        });
+
+        document.addEventListener("keyup", function(event) {
+            delete keysPressed[event.key];
+        });
+
+        // Create a new function to handle continuous movement
+        function updateCharacterPositions() {
+            if (lives <= 0 || timer <= 0 || isPaused) return;
+
+            var characterWidth = character.offsetWidth;
+            var characterHeight = character.offsetHeight;
+            var windowWidth = window.innerWidth;
+            var windowHeight = window.innerHeight;
+
+            // Handle red character movement (arrow keys)
+            if (keysPressed["ArrowUp"] && redPosY > 0) {
+                redPosY -= 12.5;
+            }
+            if (keysPressed["ArrowDown"] && redPosY + characterHeight < windowHeight) {
+                redPosY += 12.5;
+            }
+            if (keysPressed["ArrowLeft"] && redPosX > 0) {
+                redPosX -= 13.5;
+            }
+            if (keysPressed["ArrowRight"] && redPosX + characterWidth < windowWidth) {
+                redPosX += 12.5;
+            }
+
+            // Handle blue character movement (WASD keys)
+            if (keysPressed["w"] && bluePosY > 0) {
+                bluePosY -= 12.5;
+            }
+            if (keysPressed["s"] && bluePosY + characterHeight < windowHeight) {
+                bluePosY += 12.5;
+            }
+            if (keysPressed["a"] && bluePosX > 0) {
+                bluePosX -= 12.5;
+            }
+            if (keysPressed["d"] && bluePosX + characterWidth < windowWidth) {
+                bluePosX += 12.5;
+            }
+
+            // Update character positions
+            character.style.top = redPosY + "px";
+            character.style.left = redPosX + "px";
+            blueIcon.style.top = bluePosY + "px";
+            blueIcon.style.left = bluePosX + "px";
+        }
+
+        // Add movement interval to the startGame function (add this inside startGame())
+        var movementInterval = setInterval(updateCharacterPositions, 50); // ~60fps
+
+        // Update clearAllIntervals function
+        function clearAllIntervals() {
+            clearInterval(timerInterval);
+            clearInterval(redChaseInterval);
+            clearInterval(blueChaseInterval);
+            clearInterval(movementInterval);
+        }
+
+        // Update togglePause function to handle movement interval
+        function togglePause() {
+            isPaused = !isPaused;
+            if (isPaused) {
+                clearAllIntervals();
+                timerObject.textContent = "PAUSED";
+            } else {
+                if (!isGameStarted) {
+                    startGame();
+                } else {
+                    timerInterval = setInterval(function() {
+                        if (isPaused) return;
+                        timer--;
+                        timerObject.textContent = "timer: " + timer;
+                        
+                        if (timer <= 0) {
+                            timerObject.textContent = "GAME OVER";
+                            livesObject.textContent = (lives > 0) ? "YOU WIN" : "YOU LOST";
+                            clearAllIntervals();
+                        }
+                    }, 1000);
+                    
+                    redChaseInterval = setInterval(chaseRedCharacter, 10);
+                    blueChaseInterval = setInterval(chaseBlueCharacter, 10);
+                    movementInterval = setInterval(updateCharacterPositions, 40);
+                    timerObject.textContent = "timer: " + timer;
+                }
+            }
+        }
+        // Modify chase functions to respect pause state
+        function chaseRedCharacter() {
+            if (timer <= 0 || lives <= 0 || isPaused) return;
+            
+            // Rest of the chase logic remains the same
+            var dx = redPosX - greenPosX;
+            var dy = redPosY - greenPosY;
+            var distance = Math.sqrt(dx * dx + dy * dy);
+            
+            var speed = 2;
+            
+            if (distance > 1) {
+                greenPosX += (dx / distance) * speed;
+                greenPosY += (dy / distance) * speed;
+                
+                greenIcon.style.top = greenPosY + "px";
+                greenIcon.style.left = greenPosX + "px";
+            }
+            
+            if (checkCollision(character, greenIcon)) {
+                lives--;
+                livesObject.textContent = "lives: " + lives;
+                
+                if (lives <= 0) {
+                    timer = 0;
+                    livesObject.textContent = "YOU LOST";
+                    clearAllIntervals();
+                }
+                
+                moveGreenIconRandomly();
+            }
+        }
+
+        function chaseBlueCharacter() {
+            if (timer <= 0 || lives <= 0 || isPaused || numberOfPlayers == 1) return;
+            
+            // Rest of the chase logic remains the same
+            var dx = bluePosX - tealPosX;
+            var dy = bluePosY - tealPosY;
+            var distance = Math.sqrt(dx * dx + dy * dy);
+            
+            var speed = 2;
+            
+            if (distance > 1) {
+                tealPosX += (dx / distance) * speed;
+                tealPosY += (dy / distance) * speed;
+                
+                tealIcon.style.top = tealPosY + "px";
+                tealIcon.style.left = tealPosX + "px";
+            }
+            
+            if (checkCollision(blueIcon, tealIcon)) {
+                lives--;
+                livesObject.textContent = "lives: " + lives;
+                
+                if (lives <= 0) {
+                    timer = 0;
+                    livesObject.textContent = "YOU LOST";
+                    clearAllIntervals();
+                }
+                
+                moveTealIconRandomly();
+            }
+        }
+        // Handle movement for red character (arrow keys)
+        function handleRedMovement(event) {
+            if (lives <= 0 || timer <= 0 || isPaused) return;
+
+            var characterWidth = character.offsetWidth;
+            var characterHeight = character.offsetHeight;
+            var windowWidth = window.innerWidth;
+            var windowHeight = window.innerHeight;
+
+            switch(event.key) {
+                case "ArrowUp":
+                    if (redPosY > 0) redPosY -= 17.5;
+                    break;
+                case "ArrowDown":
+                    if (redPosY + characterHeight < windowHeight) redPosY += 17.5;
+                    break;
+                case "ArrowLeft":
+                    if (redPosX > 0) redPosX -= 17.5;
+                    break;
+                case "ArrowRight":
+                    if (redPosX + characterWidth < windowWidth) redPosX += 17.5;
+                    break;
+            }
+
+            // Update red character position
+            character.style.top = redPosY + "px";
+            character.style.left = redPosX + "px";
+        }
+
+        // Handle movement for blue character (WASD keys)
+        function handleBlueMovement(event) {
+            if (lives <= 0 || timer <= 0 || isPaused) return;
+
+            var characterWidth = blueIcon.offsetWidth;
+            var characterHeight = blueIcon.offsetHeight;
+            var windowWidth = window.innerWidth;
+            var windowHeight = window.innerHeight;
+
+            switch(event.key) {
+                case "w":
+                    if (bluePosY > 0) bluePosY -= 16.5;
+                    break;
+                case "s":
+                    if (bluePosY + characterHeight < windowHeight) bluePosY += 16.5;
+                    break;
+                case "a":
+                    if (bluePosX > 0) bluePosX -= 16.5;
+                    break;
+                case "d":
+                    if (bluePosX + characterWidth < windowWidth) bluePosX += 16.5;
+                    break;
+            }
+
+            // Update blue character position
+            blueIcon.style.top = bluePosY + "px";
+            blueIcon.style.left = bluePosX + "px";
+        }
+
+        // Function to handle special effects
+        function handleSpecialEffects(event) {
+            switch(event.key) {
+                case "z":
+                    const fonts = ["Courier New, sans-serif", "'Times New Roman', serif", "'Arial', monospace", "'Georgia', serif"];
+                    document.body.style.fontFamily = fonts[Math.floor(Math.random() * fonts.length)];
+                    break;
+                case "x":
+                    const colors = ["cyan", "magenta", "lime", "orange", "yellow", "red"];
+                    document.body.style.color = colors[Math.floor(Math.random() * colors.length)];
+                    const iconColors = ["pink", "purple", "blue", "green", "red", "orange", "green", "purple", "cyan", "black", "magenta", "brown"];
+                    character.style.backgroundColor = iconColors[Math.floor(Math.random() * iconColors.length)];
+                    break;
+                case "c":
+                    character.style.transition = "transform 1s";
+                    character.style.transform = "rotate(360deg)";
+                    setTimeout(() => greenIcon.style.transform = "rotate(0deg)", 2000);
+                    break;
+                case "v":
+                    greenIcon.style.display = 'none';
+                    setTimeout(() => greenIcon.style.display = 'block', 2000);
+                    break;
+            }
+        }
+        
+        // Function to move the green character towards the red character
+        function chaseRedCharacter() {
+            if (timer <= 0 || lives <= 0) return;
+    
+            // Calculate the direction vector from the green icon to the red icon
+            var dx = redPosX - greenPosX;
+            var dy = redPosY - greenPosY;
+            var distance = Math.sqrt(dx * dx + dy * dy); // Euclidean distance
+    
+            var speed = 2;  // Speed of the green character (you can adjust this value)
+    
+            if (distance > 1) { // If the green icon is not already at the red icon's position
+                // Normalize the direction vector and scale it by the speed
+                greenPosX += (dx / distance) * speed;
+                greenPosY += (dy / distance) * speed;
+    
+                // Update the green icon's position on the screen
+                greenIcon.style.top = greenPosY + "px";
+                greenIcon.style.left = greenPosX + "px";
+            }
+    
+            // Check for collision between red and green characters
+            if (checkCollision(character, greenIcon)) {
+                // If there is a collision, decrement lives and update the UI
+                lives--;
+                livesObject.textContent = "lives: " + lives;
+    
+                if (lives <= 0) {
+                    // If lives are exhausted, end the game
+                    timer = 0;
+                    livesObject.textContent = "YOU LOST";
+                    clearInterval(countdownInterval);
+                    clearInterval(gameInterval);
+                }
+    
+                moveGreenIconRandomly();  // Move the green icon to a random position after collision
+            }
+        }
+
+        // Function to move the second bad guy character towards the blue character
+        function chaseBlueCharacter() {
+            if (timer <= 0 || lives <= 0 || numberOfPlayers == 1) return;
+    
+            // Calculate the direction vector from the green icon to the red icon
+            var dx = bluePosX - tealPosX;
+            var dy = bluePosY - tealPosY;
+            var distance = Math.sqrt(dx * dx + dy * dy); // Euclidean distance
+    
+            var speed = 2;  // Speed of the green character (you can adjust this value)
+    
+            if (distance > 1) { // If the green icon is not already at the red icon's position
+                // Normalize the direction vector and scale it by the speed
+                tealPosX += (dx / distance) * speed;
+                tealPosY += (dy / distance) * speed;
+    
+                // Update the green icon's position on the screen
+                tealIcon.style.top = tealPosY + "px";
+                tealIcon.style.left = tealPosX + "px";
+            }
+    
+            // Check for collision between red and green characters
+            if (checkCollision(blueIcon, tealIcon)) {
+                // If there is a collision, decrement lives and update the UI
+                lives--;
+                livesObject.textContent = "lives: " + lives;
+    
+                if (lives <= 0) {
+                    // If lives are exhausted, end the game
+                    timer = 0;
+                    livesObject.textContent = "YOU LOST";
+                    clearInterval(countdownInterval);
+                    clearInterval(gameInterval);
+                }
+    
+                moveTealIconRandomly();  // Move the green icon to a random position after collision
+            }
+        }
+    
+        // Function to check collision
+        function checkCollision(red, green) {
+            var redRect = red.getBoundingClientRect();
+            var greenRect = green.getBoundingClientRect();
+        
+            return !(redRect.top > greenRect.bottom || 
+                     redRect.bottom < greenRect.top || 
+                     redRect.left > greenRect.right || 
+                     redRect.right < greenRect.left);
+        }
+        
+        // Function to move the green icon to a random location
+        function moveGreenIconRandomly() {
+            greenPosX = Math.floor(Math.random() * (window.innerWidth - 50));
+            greenPosY = Math.floor(Math.random() * (window.innerHeight - 50));
+        
+            greenIcon.style.top = greenPosY + "px";
+            greenIcon.style.left = greenPosX + "px";
+        }
+        // Function to move the green icon to a random location
+        function moveTealIconRandomly() {
+            tealPosX = Math.floor(Math.random() * (window.innerWidth - 50));
+            tealPosY = Math.floor(Math.random() * (window.innerHeight - 50));
+        
+            tealIcon.style.top = greenPosY + "px";
+            tealIcon.style.left = greenPosX + "px";
+        }
+        
+        // IntersectionObserver to detect when Page 2 is visible
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !isGameStarted) {
+    //                 let mode=prompt("Player 1 , Player 2, ENTER 1, 2")
+    //                     if(mode=="1"){
+    //                         startGame()
+                            
+    //                     } 
+    //                     else if(mode=="2"){
+    //                         var greenIcon = document.getElementById("blueIcon");
+    // greenIcon.style.display = "block";   
+    //                     }
+                    // startGame();  // Start the game when Page 2 is visible
+                }
+            });
+        }, { threshold: 0.5 });  // Trigger when at least 50% of the element is visible
+        
+        // Start observing Page 2 when it's in the viewport
+        observer.observe(document.getElementById("Page2"));
+     </script>
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fun Games</title>
-<style>
-/* General Styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: url('Background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    text-align: center;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-h1 {
-    color: #6eb220;
-    font-size: 2rem;
-    margin: 20px 0;
-}
-
-h2 {
-    color: #fff;
-    font-family: "Courier New", monospace;
-    margin: 15px 0 10px;
-}
-
-p {
-    color: #99b71e;
-    font-size: 1rem;
-}
-
-a {
-    color: #0fc9d7;
-    text-decoration: none;
-    font-size: 1rem;
-    display: block;
-    margin: 5px 0;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: #fff;
-}
-
-/* Tabs */
-.tab {
-    overflow: hidden;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.tab button {
-    background: #444;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.tab button.active,
-.tab button:hover {
-    background: #2196f3;
-}
-
-/* Game Icons */
-.icon {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    transition: top 0.05s, left 0.05s;
-}
-
-#character { background: red; }
-#blueIcon { background: rgb(0,102,255); }
-#greenIcon { background: green; }
-#tealIcon { background: rgb(28,238,238); }
-
-/* Timer & Lives */
-#timer, #lives {
-    font-size: 2rem;
-    margin: 10px;
-    color: rgb(196,230,173);
-}
-
-/* Age sections hidden by default */
-.age2, .age8, .age13 { display: none; }
-
-/* Responsive input/button */
-input, button {
-    padding: 10px;
-    margin: 10px 5px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: none;
-}
-
-button:hover {
-    background-color: #2196f3;
-    color: #fff;
-}
-
-</style>
-</head>
-<body>
-
-<!-- Tabs -->
-<div class="tab">
-    <button class="tablinks" id="defaultOpen" onclick="openTab(event,'Page1')">Page 1</button>
-    <button class="tablinks" onclick="openTab(event,'Page2')">Page 2</button>
-</div>
-
-<!-- Page 1 -->
-<div id="Page1" class="tab-content">
-    <h1>Fun Games For Your Age</h1>
-    <input id="agebox" type="number" placeholder="Enter age">
-    <button onclick="checkAge()">Submit</button>
-    <p>Select your age to see appropriate games!</p>
-
-    <h2>Age 2-7</h2>
-    <div class="age2">
-        <a href="https://subwaysurf.io/play" target="_blank">Subway Surfers</a>
-        <a href="https://snake.io/" target="_blank">Snake.io</a>
-        <a href="https://kizi.com/games/going-balls" target="_blank">Going Balls</a>
-        <a href="https://poki.com/" target="_blank">Poki</a>
-        <a href="https://unblocked-minecraft.github.io/" target="_blank">Minecraft</a>
-    </div>
-
-    <h2>Age 8-12</h2>
-    <div class="age8">
-        <a href="https://supercell.com/en/games/brawlstars/" target="_blank">Brawl Stars</a>
-        <a href="https://yoho2.top/" target="_blank">Yohoho.io</a>
-        <a href="https://obiudon.easterndns.com/load.html?game=brawlguys" target="_blank">Art Class</a>
-        <a href="https://vex-5.github.io/category/shooting.html" target="_blank">Vex 5</a>
-        <a href="https://super-mario-64.gitlab.io/" target="_blank">Mario 64</a>
-    </div>
-
-    <h2>Age 13+</h2>
-    <div class="age13">
-        <a href="https://www.callofduty.com/" target="_blank">Call of Duty</a>
-        <a href="https://theslope.github.io/" target="_blank">Slope</a>
-        <a href="https://crossyroad-game.github.io/" target="_blank">Crossy Road</a>
-        <a href="https://ubggo.github.io/ub-games/" target="_blank">UBGGO Games</a>
-        <a href="https://idlestartuptycoon.gitlab.io/" target="_blank">Idle Startup</a>
-    </div>
-</div>
-
-<!-- Page 2 -->
-<div id="Page2" class="tab-content" style="position: relative; height: 80vh; overflow: hidden;">
-    <h1>Press Start to Play</h1>
-
-    <div id="character" class="icon" style="top:100px;left:100px"></div>
-    <div id="greenIcon" class="icon" style="top:200px;left:1200px"></div>
-
-    <div id="timer">Timer: 45</div>
-    <div id="lives">Lives: 3</div>
-
-    <button onclick="startGame()">Start</button>
-</div>
-
-<script>
-// Tabs
-function openTab(evt, tabName) {
-    document.querySelectorAll(".tab-content").forEach(tab => tab.style.display = "none");
-    document.querySelectorAll(".tablinks").forEach(btn => btn.classList.remove("active"));
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.classList.add("active");
-}
-
-document.getElementById("defaultOpen").click();
-
-// Age checker
-function checkAge() {
-    let age = parseInt(document.getElementById("agebox").value);
-    document.querySelectorAll(".age2,.age8,.age13").forEach(e => e.style.display = "none");
-
-    if (age <= 7) document.querySelector(".age2").style.display = "block";
-    else if (age <= 12) document.querySelector(".age8").style.display = "block";
-    else document.querySelector(".age13").style.display = "block";
-}
-
-// Game logic
-let character = document.getElementById("character");
-let green = document.getElementById("greenIcon");
-
-let redX = 100, redY = 100;
-let greenX = 1200, greenY = 200;
-
-let timer = 45, lives = 3;
-let keys = {};
-let gameInterval, timerInterval;
-
-document.addEventListener("keydown", e => keys[e.key] = true);
-document.addEventListener("keyup", e => delete keys[e.key]);
-
-function startGame() {
-    if (gameInterval) clearInterval(gameInterval);
-    if (timerInterval) clearInterval(timerInterval);
-
-    gameInterval = setInterval(gameLoop, 40);
-    timerInterval = setInterval(() => {
-        timer--;
-        document.getElementById("timer").innerText = "Timer: " + timer;
-        if (timer <= 0) { alert("Time's Up! Game Over."); location.reload(); }
-    }, 1000);
-}
-
-function gameLoop() {
-    const speed = 6;
-    if (keys["ArrowUp"]) redY -= speed;
-    if (keys["ArrowDown"]) redY += speed;
-    if (keys["ArrowLeft"]) redX -= speed;
-    if (keys["ArrowRight"]) redX += speed;
-
-    // Keep character inside viewport
-    redX = Math.max(0, Math.min(window.innerWidth - 50, redX));
-    redY = Math.max(0, Math.min(window.innerHeight - 50, redY));
-
-    character.style.left = redX + "px";
-    character.style.top = redY + "px";
-
-    // Green icon moves towards player
-    let dx = redX - greenX;
-    let dy = redY - greenY;
-    let dist = Math.sqrt(dx*dx + dy*dy);
-
-    if(dist !== 0){
-        greenX += (dx/dist) * 2;
-        greenY += (dy/dist) * 2;
-    }
-
-    green.style.left = greenX + "px";
-    green.style.top = greenY + "px";
-
-    // Collision
-    if(Math.abs(redX - greenX) < 40 && Math.abs(redY - greenY) < 40){
-        lives--;
-        document.getElementById("lives").innerText = "Lives: " + lives;
-
-        greenX = Math.random() * (window.innerWidth - 50);
-        greenY = Math.random() * (window.innerHeight - 50);
-
-        if(lives <= 0){
-            alert("You Lost!");
-            location.reload();
-        }
-    }
-}
-</script>
-</body>
-</html>
+  <style>
+    body {
+        
+      font-family: 'Arial', 'Courier New', 'Courier New', Courier New;
+      text-align: center;
+    } -->
